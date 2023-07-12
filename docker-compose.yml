@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     container_name: proxitok-web
-    image: ghcr.io/pablouser1/proxitok:master
+    image: ghcr.io/riqalter/proxitok:latest
     ports:
       - 8080:80
     environment:
@@ -47,7 +47,7 @@ services:
 
   signer:
     container_name: proxitok-signer
-    image: ghcr.io/pablouser1/signtok:master
+    image: ghcr.io/riqalter/signtok:latest
     networks:
       - proxitok
     user: nobody

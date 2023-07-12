@@ -4,6 +4,8 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN apt update -y && apt upgrade -y \
     && apt install -y --no-install-recommends libzip-dev \
     && pecl install redis zip \
+    && pecl install apcu \
+    && docker-php-ext-enable apcu \
     && docker-php-ext-enable redis zip \
     && a2enmod rewrite headers \
     && mkdir /cache \
